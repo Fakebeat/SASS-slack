@@ -1,0 +1,7 @@
+@mixin mediaQuery($width:940px){
+    @media screen and (min-width:$width){
+        @content
+    }
+        
+    
+}

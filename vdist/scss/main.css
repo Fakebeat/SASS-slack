@@ -20,6 +20,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
   font-family: "Raleway", sans-serif;
+  height: 10000px;
 }
 
 .container {
@@ -34,6 +35,18 @@ body {
   position: relative;
   position: fixed;
   width: 100%;
+}
+.header .container {
+  transition: 1s ease;
+}
+.header.white {
+  background: transparent;
+}
+.header.white .container {
+  background: blue;
+  border-radius: 3rem;
+  transform: translateY(5rem);
+  transition: 2s ease;
 }
 .header__wrapper {
   display: flex;
@@ -52,13 +65,12 @@ body {
   color: hsl(0, 0%, 100%);
   font-size: 4rem;
 }
-.header .branding ul li {
-  color: hsl(0, 0%, 100%);
+.header .branding ul {
   display: none;
 }
 .header__nav {
   position: absolute;
-  background: pink;
+  background: hsl(0, 0%, 100%);
   top: 0rem;
   right: -100rem;
   width: 100%;
@@ -69,23 +81,42 @@ body {
   width: 15rem;
   padding: 2rem;
 }
-.header__nav ul {
+.header__nav ul.nav {
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
 }
-.header__nav ul li {
+.header__nav ul.nav li {
   padding: 1rem;
 }
-.header__nav ul li a {
+.header__nav ul.nav li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 2rem;
   color: black;
 }
-.header__nav ul li a i {
+.header__nav ul.nav li a i {
+  transition: 0.5s ease;
   color: hsl(0, 0%, 0%);
+}
+.header__nav ul.nav li a i.open {
+  transform: rotate(90deg);
+  transition: 0.5s ease;
+}
+.header__nav ul.nav ul.drop {
+  background: hsl(0, 0%, 100%);
+  margin: 0 3rem;
+  max-height: 0rem;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.header__nav ul.nav ul.drop li a {
+  font-size: 1.5rem;
+}
+.header__nav ul.nav ul.drop.open {
+  max-height: 50rem;
+  transition: 0.5s ease;
 }
 .header__nav__btn {
   display: flex;
@@ -141,6 +172,45 @@ body {
 .header__actions__btn {
   display: none;
 }
+@media screen and (min-width: 940px) {
+  .header__nav {
+    display: none;
+  }
+  .header .branding ul {
+    display: flex;
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+  .header .branding ul li {
+    transition: 0.5s ease;
+  }
+  .header .branding ul li a {
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header .branding ul li a i {
+    font-size: 1rem;
+  }
+  .header .branding ul li:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+  }
+  .header__actions .toggle__menu {
+    display: none;
+  }
+  .header__actions__btn {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .header__actions__btn a.sign {
+    color: hsl(0, 0%, 100%);
+  }
+}
 
 .btn {
   display: inline-block;
@@ -148,14 +218,66 @@ body {
   border: 1px solid transparent;
   color: hsl(0, 0%, 0%);
   font-weight: 550;
+  position: relative;
+  border-radius: 1rem;
 }
 .btn.bg--primary {
   background: hsl(293.51, 54.41%, 26.67%);
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
+  transition: 0.5s ease;
+}
+.btn.bg--primary::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%);
+  transform-origin: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: -1;
+  border-radius: 1rem;
+}
+.btn.bg--primary:hover::before {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.btn.bg--primary:hover {
+  color: hsl(293.51, 54.41%, 26.67%);
+  z-index: 999;
+  border: 1px solid hsl(293.51, 54.41%, 26.67%);
+  transition: 0.5s ease;
 }
 .btn.bg--light {
   background: hsl(0, 0%, 100%);
   color: hsl(293.51, 54.41%, 26.67%);
   border: 1px solid hsl(293.51, 54.41%, 26.67%);
+  transition: 0.5s ease;
+}
+.btn.bg--light::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: hsl(293.51, 54.41%, 26.67%);
+  transform-origin: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: -1;
+  border-radius: 1rem;
+}
+.btn.bg--light:hover::before {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.btn.bg--light:hover {
+  color: hsl(0, 0%, 100%);
+  z-index: 999;
+  border: 1px solid hsl(0, 0%, 100%);
+  transition: 0.5s ease;
 }/*# sourceMappingURL=main.css.map */
