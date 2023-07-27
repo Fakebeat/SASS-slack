@@ -3,6 +3,7 @@
     position: relative;
     position: fixed;
     width: 100%;
+    z-index: 999;
     .container{
         transition: 1s ease;
     }
@@ -176,7 +177,6 @@
                         transition: .5s ease;
                         }
                     }
-                
             }
         }
         &__actions{
@@ -195,43 +195,200 @@
     }
 }
 
+
+
+/*-------BANNER-----*/
 .banner{
     background: $clr-primary;
     padding-top: 13rem;
     padding-bottom: 5rem;
-    .container{
-    }
+    position: relative;
+    height: 127vh;
         &__wrapper{
-            display:grid;
-            grid-template-columns: 1fr;
-            
+            display: flex;
+            flex-direction: column;
+        }
+        &__text{
+        text-align: center;
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $clr-light;
+            line-height: 1;
+            span{
+                color: #ffa700;
+            }
+        }
+        p{
+            color: $clr-light;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            &:last-child{
+                display: none;  
+            }
+        }
+        &__btn{
+            display: flex;
+            flex-direction: column;
+            font-size: 1.3rem;
+            gap: 2rem;
             a{
-                text-align: center;
-                margin: 1rem; 
-                i{
-                   padding: 0 2rem:
+                position: relative;
+                padding: 2rem;
+                img{
+                    @include imgFit(3rem,3rem);
+                   left: 1rem;
+                   top: 1.5rem;
+                   border-radius: .2rem;
+                   background: $clr-light;
+                   position: absolute;
+                   padding: .5rem;
+                }
+                 &:last-child{
+                     background: blue;
+                     color: $clr-light;
+                 }
+            }
+            
+        }
+    }
+    video{
+        @include imgFit(100%,400px);
+        position: absolute;
+        bottom: 0;
+        margin-top: 2rem;
+    }
+
+    @include mediaQuery($break-lg){
+        height: unset;
+        &__wrapper{
+            @include gridEven(2,10rem);
+        }
+        &__text{
+            text-align: left;
+            h1{
+                font-size: 5.7rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+                
+            }
+            p{
+                &:last-child{
+                    display: unset;
+                   
+                }
+            }
+            &__btn{
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 3rem;
+                a{
+                    position: relative;
+                    padding: 2rem;
+                    width: 27rem;
+                    text-align: center;
+                    img{
+                        @include imgFit(3rem,3rem);
+                       left: 1rem;
+                       top: 1.5rem;
+                       border-radius: .2rem;
+                       background: $clr-light;
+                       position: absolute;
+                       padding: .5rem;
+                    }
+                     &:last-child{
+                         background: blue;
+                         color: $clr-light;
+                     }
                 }
             }
         }
-        &__text h1{
-            font-size: 4rem;
-            font-weight: 600;
-            color:$clr-light;
-            line-height: 1.2;
-            max-width: 45rem;
-            text-align: center;
-        }
-        &__text p{
-            font-size: 2rem;
-            text-align: center;
-            color: $clr-light;
-            margin: 4rem 0;
-            max-width: 45rem;
-        }
         
     }
-    .banner__wrapper img{
-        width: 100%;
-        margin: auto;
+    video{
+        position: unset;
+        @include imgFit(100%, 400px)
     }
-   
+}
+
+
+/*-------FEATURED-----*/
+.featured{
+    padding: 5rem 0;
+    background: $clr-light;
+    &__title{
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    &__logos{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        img{
+            &#airbnb{
+                width: 10rem;
+            }
+            &#nasa{
+                width: 7rem;
+            }
+            &#uber{
+                width: 9rem;
+            }
+            &#target{
+                width: 5rem;
+            }
+            &#ny{
+                width: 25rem;
+            }
+            &#etsy{
+                width: 7rem;
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        .featured{
+            padding: 5rem 0;
+            background: $clr-light;
+            &__title{
+                text-align: center;
+                font-weight:bold;
+                font-size: 2rem;
+                margin-bottom: 5rem;
+            }
+            &__logos{
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 5rem;
+                img{
+                    &#airbnb{
+                        width: 10rem;
+                    }
+                    &#nasa{
+                        width: 7rem;
+                    }
+                    &#uber{
+                        width: 9rem;
+                    }
+                    &#target{
+                        width: 5rem;
+                    }
+                    &#ny{
+                        width: 25rem;
+                    }
+                    &#etsy{
+                        width: 7rem;
+                    }
+                }
+            }
+    }
+}
+}
