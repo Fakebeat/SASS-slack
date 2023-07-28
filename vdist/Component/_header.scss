@@ -196,7 +196,6 @@
 }
 
 
-
 /*-------BANNER-----*/
 .banner{
     background: $clr-primary;
@@ -215,6 +214,7 @@
             font-weight: 700;
             color: $clr-light;
             line-height: 1;
+            margin-bottom: 1rem;
             span{
                 color: #ffa700;
             }
@@ -256,8 +256,9 @@
         @include imgFit(100%,400px);
         position: absolute;
         bottom: 0;
-        margin-top: 2rem;
+        
     }
+   
 
     @include mediaQuery($break-lg){
         height: unset;
@@ -304,11 +305,10 @@
                 }
             }
         }
-        
-    }
-    video{
-        position: unset;
-        @include imgFit(100%, 400px)
+        video{
+            position: unset;
+            @include imgFit(100%, 400px)
+        } 
     }
 }
 
@@ -316,7 +316,7 @@
 /*-------FEATURED-----*/
 .featured{
     padding: 5rem 0;
-    background: $clr-light;
+    background: rgb(239, 237, 237);
     &__title{
         text-align: center;
         font-weight: bold;
@@ -392,3 +392,184 @@
     }
 }
 }
+
+
+/*-------SERVICES-----*/
+.services{
+    background: rgb(239, 237, 237);
+        &__item{
+            video{
+
+            @include imgFit(100%,400px);
+                width: 40rem;
+                border-top-right-radius: 20rem;
+                border-bottom-right-radius: 20rem;
+                margin-bottom: 5rem;
+            }
+        }
+      
+        &__item:nth-child(even){
+            video{
+                @include imgFit(100%,400px);
+                border-top-right-radius: unset;
+                border-bottom-right-radius: unset;
+                border-top-left-radius: 20rem;
+                border-bottom-left-radius: 20rem;
+                margin-bottom: 2rem;
+            }
+        }
+        &__text{
+            margin: 0 1rem 7rem 1rem;
+            h1{
+                margin-bottom: 2rem;
+                font-size: 3rem;
+                color: $clr-dark;
+            }
+            p{
+                margin-bottom: 2rem;
+                font-size: 1.7rem;
+                font-weight: bold;
+            }
+            a{
+                font-weight: bold;
+            }
+        } 
+    @include mediaQuery($break-lg){
+        height: unset;
+        &__item{
+            display: flex;
+            padding-bottom: 1rem;
+            margin-bottom: 5rem;
+            
+        }
+        &__item:nth-child(even){
+            .services__content{
+                flex-direction: row-reverse;
+            }
+            flex-direction: row-reverse;
+            video{
+                @include imgFit(100%,400px);
+                border-top-right-radius: unset;
+                border-bottom-right-radius: unset;
+                border-top-left-radius: 20rem;
+                border-bottom-left-radius: 20rem;
+                margin-bottom: 2rem;
+            }
+
+        }
+        &__content{
+            @include centerAll;
+            padding: 0 12rem 0 12rem;
+            gap:11rem;
+        }
+        &__text{
+            h1{
+                font-size: 5rem
+            }
+            p{
+                font-size: 1.7rem;
+                font-weight: lighter;
+            }
+        }
+    }
+        video{
+            @include imgFit(100%, 400px);
+            display: unset;
+            max-width: 100%;
+            
+            
+        }
+    }
+    
+
+/*-------ABOUT-----*/
+.abt{
+    &__wrapper{
+    }
+    &__btn{
+        font-weight: 200;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        gap: 2rem;
+    }
+    &__text{
+        text-align: center;
+        h1{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        p{
+            font-size: 1.8rem;
+            margin-bottom: 5rem;
+        }
+    }
+    &__item{
+        margin-top: 2rem;
+        h1{
+            color: $clr-primary;
+            font-size: 5rem;
+        }
+        p{
+            
+            text-align: center;
+            font-size: 3rem;
+
+        }
+    }
+   
+
+}
+
+
+/*-----FOOTER-----*/
+.footer{
+    &__left{
+        ul{
+            li{
+                padding: 1.4rem;
+                padding: 2rem 0;
+                font-weight: bold;
+                a{
+                    color: $clr-dark;
+                }
+            }
+        }
+        .modal{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: $clr-light;
+            top: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            &.active{
+                display: block;
+            }
+            button{
+                float: right;
+                background: transparent;
+                border: 0 solid transparent;
+                font-size: 2.5rem;
+                cursor: pointer;
+            }
+        }
+        @include mediaQuery($width:940px){
+            .modal{
+                max-width: 72rem;
+                height: auto;
+                margin: 0 auto;
+                bottom: 15rem;
+            }
+            .language{
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+    }
+}
+    

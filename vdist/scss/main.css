@@ -793,6 +793,7 @@ body {
   font-weight: 700;
   color: hsl(0, 0%, 100%);
   line-height: 1;
+  margin-bottom: 1rem;
 }
 .banner__text h1 span {
   color: #ffa700;
@@ -838,7 +839,6 @@ body {
      object-fit: cover;
   position: absolute;
   bottom: 0;
-  margin-top: 2rem;
 }
 @media screen and (min-width: 940px) {
   .banner {
@@ -888,19 +888,19 @@ body {
     background: blue;
     color: hsl(0, 0%, 100%);
   }
-}
-.banner video {
-  position: unset;
-  width: 100%;
-  height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  .banner video {
+    position: unset;
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 /*-------FEATURED-----*/
 .featured {
   padding: 5rem 0;
-  background: hsl(0, 0%, 100%);
+  background: rgb(239, 237, 237);
 }
 .featured__title {
   text-align: center;
@@ -970,6 +970,172 @@ body {
   }
   .featured .featured__logos img#etsy {
     width: 7rem;
+  }
+}
+
+/*-------SERVICES-----*/
+.services {
+  background: rgb(239, 237, 237);
+}
+.services__item video {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 40rem;
+  border-top-right-radius: 20rem;
+  border-bottom-right-radius: 20rem;
+  margin-bottom: 5rem;
+}
+.services__item:nth-child(even) video {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: unset;
+  border-bottom-right-radius: unset;
+  border-top-left-radius: 20rem;
+  border-bottom-left-radius: 20rem;
+  margin-bottom: 2rem;
+}
+.services__text {
+  margin: 0 1rem 7rem 1rem;
+}
+.services__text h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: hsl(0, 0%, 0%);
+}
+.services__text p {
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.services__text a {
+  font-weight: bold;
+}
+@media screen and (min-width: 940px) {
+  .services {
+    height: unset;
+  }
+  .services__item {
+    display: flex;
+    padding-bottom: 1rem;
+    margin-bottom: 5rem;
+  }
+  .services__item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .services__item:nth-child(even) .services__content {
+    flex-direction: row-reverse;
+  }
+  .services__item:nth-child(even) video {
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-top-left-radius: 20rem;
+    border-bottom-left-radius: 20rem;
+    margin-bottom: 2rem;
+  }
+  .services__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12rem 0 12rem;
+    gap: 11rem;
+  }
+  .services__text h1 {
+    font-size: 5rem;
+  }
+  .services__text p {
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+}
+.services video {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: unset;
+  max-width: 100%;
+}
+
+/*-------ABOUT-----*/
+.abt__btn {
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  gap: 2rem;
+}
+.abt__text {
+  text-align: center;
+}
+.abt__text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.abt__text p {
+  font-size: 1.8rem;
+  margin-bottom: 5rem;
+}
+.abt__item {
+  margin-top: 2rem;
+}
+.abt__item h1 {
+  color: hsl(293.51, 54.41%, 26.67%);
+  font-size: 5rem;
+}
+.abt__item p {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/*-----FOOTER-----*/
+.footer__left ul li {
+  padding: 1.4rem;
+  padding: 2rem 0;
+  font-weight: bold;
+}
+.footer__left ul li a {
+  color: hsl(0, 0%, 0%);
+}
+.footer__left .modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: hsl(0, 0%, 100%);
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+.footer__left .modal.active {
+  display: block;
+}
+.footer__left .modal button {
+  float: right;
+  background: transparent;
+  border: 0 solid transparent;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 940px) {
+  .footer__left .modal {
+    max-width: 72rem;
+    height: auto;
+    margin: 0 auto;
+    bottom: 15rem;
+  }
+  .footer__left .language {
+    display: flex;
+    flex-direction: column;
   }
 }
 
