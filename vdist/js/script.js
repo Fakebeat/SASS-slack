@@ -50,8 +50,9 @@ var slider = tns({
   container: '.slider',
   items:1,
   slideBy: 'page',
-  autoplay: false,
+  autoplay: true,
   mouseDrag: true,
+  navPosition:"bottom",
   responsive:{
     900:{
       items:4

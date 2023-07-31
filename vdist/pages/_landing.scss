@@ -435,15 +435,52 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .slider__action{
-            justify-content: space-between;
-        }  
+         
     }
     .tns-controls,
-    .tns-nav,
+    // .tns-nav,
     button[data-action="stop"] {
         display: none;
     }
+    .tns-nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            button {
+              display: inline-block;
+              width: 1.2rem;
+              height: 1.2rem;
+              background: $clr-light;
+              border-radius: 50%;
+              justify-content: center;
+              border: none;
+              transition: .5s ease-in-out;
+            }
+            button:hover{
+              background: $clr-primary;
+            }
+            button.tns-nav-active{
+              background: $clr-primary;
+            }
+            button:hover,
+              button.tns-nav-active
+            {
+                position: relative;
+                transition: .5s ease-in-out;
+                background: $clr-primary;
+            }
+            button:hover::before,
+            button.tns-nav-active:before{
+                content: '';
+                position: absolute;
+                padding: 1rem;
+                top: -.5rem;
+                left: -.5rem;
+                border-radius: 50%;
+                border: 1px dashed $clr-primary;
+              }
+          }
 }
 
 
