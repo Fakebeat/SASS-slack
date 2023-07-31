@@ -27,24 +27,48 @@ drop.forEach((link) => {
 const modal = document.querySelector('.modal');
 const btnRegion = document.querySelector('.region');
 const btnClose = document.querySelector('#closeModal');
+const overlay = document.querySelector('#overlay');
 
-  btnRegion.addEventListener("click", () => {
-    btnRegion.classList.toggle('active');
-    btnRegion.nextElementSibling.classList.toggle('active');
-})
 
 const openModalHandler = () => {
   btnRegion.classList.toggle('active');
   btnRegion.nextElementSibling.classList.toggle('active');
+  overlay.classList.toggle('active');
 }
-
 
 const closeModalHandler = () => {
   modal.classList.toggle('active');
-  btnRegion.classList.toggle('active')
+  btnRegion.classList.toggle('active');
+  overlay.classList.toggle('active');
 }
 
-btnClose.addEventListener('click',()=>{
-  modal.classList.toggle('active');
-  btnRegion.classList.toggle('active')
+overlay.addEventListener('click',closeModalHandler);
+btnClose.addEventListener('click',closeModalHandler);
+btnRegion.addEventListener('click',openModalHandler);
+
+var slider = tns({
+  container: '.slider',
+  items:1,
+  slideBy: 'page',
+  autoplay: false,
+  mouseDrag: true,
+  responsive:{
+    900:{
+      items:4
+    }
+  }
 })
+
+
+
+// btnClose.addEventListener('click',()=>{
+//   modal.classList.toggle('active');
+//   btnRegion.classList.toggle('active')
+// })
+
+
+// console.log(btnClose)
+//   btnRegion.addEventListener("click", () => {
+//     btnRegion.classList.toggle('active');
+//     btnRegion.nextElementSibling.classList.toggle('active');
+// })

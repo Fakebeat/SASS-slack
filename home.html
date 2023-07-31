@@ -6,8 +6,10 @@
     <title>slack - Home</title>
     <link rel="stylesheet" href="./vdist/scss/main.css">
     <script src="https://kit.fontawesome.com/3ad19bce0f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
+  <div id="overlay"></div>
     <header class="header">
          <div class="container">
            <div class="header__wrapper">
@@ -62,7 +64,7 @@
          </div>
     </header>
 
-    <section class="banner">
+<section class="banner">
       <div class="container">
           <div class="banner__wrapper">
               <div class="banner__text">
@@ -79,9 +81,9 @@
                 <video src="./vdist/Img/banner__vid.webm" autoplay loop></video>
           </div>
       </div>
-  </section>
+</section>
 
-  <section class="featured">
+<section class="featured">
       <div class="container">
         <div class="featured__wrapper">
           <div class="featured__title">
@@ -97,7 +99,7 @@
           </div>
         </div>
       </div>
-  </section>
+</section>
 
   <section class="services">
     <div class="services__item">
@@ -140,27 +142,27 @@
 <section class="abt">
   <div class="container">
     <div class="abt__wrapper">
-      <div class="abt__text">
-          <h1>Teams large and small rely on Slack</h1>
+      <h1>Teams large and small rely on Slack</h1>
           <p>Slack securely scales up to support collaboration at the world's biggest companies.</p>
             <div class="abt__btn">
               <a href="" class="btn bg--primary">MEET SLACK FOR ENTERPRISE</a>
               <a href="" class="btn bg--light">TALK TO SALES</a>
             </div>
-            <div class="abt__item">
-              <h1>85%</h1>
-              <p>of users say Slack has improved communication*</p>
-            </div>
-            <div class="abt__item">
-              <h1>86%</h1>
-              <p>feel their ability to work remotely has improved*</p>
-            </div>
-            <div class="abt__item">
-            <h1>88%</h1>
-            <p>feel more connected to their teams</p>
-           </div>
-      </div>
     </div>
+            <div class="abt__text">
+                <div class="abt__item">
+                  <h1>85%</h1>
+                  <p>of users say Slack has improved communication*</p>
+                </div>
+                <div class="abt__item">
+                  <h1>86%</h1>
+                  <p>feel their ability to work remotely has improved*</p>
+                </div>
+                <div class="abt__item">
+                <h1>88%</h1>
+                <p>feel more connected to their teams</p>
+              </div>
+            </div>
   </div>
 </section>
 
@@ -179,9 +181,81 @@
   </div>
 </section>
 
+<section class="work">
+  <div class="container">
+    <div class="update__wrapper">
+        <h3>Take a deeper dive into a new way to work</h3>
+        <div class="slider">   
+          <div class="slider__card">
+            <div class="slider__item">
+              <img src="./vdist/Img/promo-state-of-work.jpg" alt="">
+            <div class="slider__content">
+              <h5>Report</h5>
+              <h3>The state Work 2023</h3>
+              <div class="slider__action">
+                <a href="#">READ MORE</a>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+              </div>
+          </div> 
+          <div class="slider__card">
+              <div class="slider__item">
+                  <img src="./vdist/Img/wtny-resource-tile.jpg" alt="">
+              <div class="slider__content">
+                <h5>On demand</h5>
+                <h3>Big things are launching Relive the highlights of World Tour ew York</h3>
+                <div class="slider__action">
+                  <a href="#">WATCH NOW</a>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+              </div>
+          </div>       
+          <div class="slider__card">
+              <div class="slider__item">
+                  <img src="./vdist/Img/promo-open-ai.jpg" alt="">
+              <div class="slider__content">
+                <h5>Customer story</h5>
+                <h3>The next big thing? AI for everyone</h3>
+                <div class="slider__action">
+                  <a href="#">READ MORE</a>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+              </div>
+          </div>            
+          <div class="slider__card">
+                <div class="slider__item">
+                  <img src="./vdist/Img/promo-boost-productivity.jpg" alt="">
+              <div class="slider__content">
+                <h5>Webninar</h5>
+                <h3>Top Slack tips to boost productivity</h3>
+                <div class="slider__action">
+                  <a href="#">WATCH NOW</a>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
+   
     <div class="footer__wrapper">
+      <img src="./vdist/Img/vector11.svg" alt="">
+      <h1>WHY SLACK?</h1>
+      <p>Slack vs email</p>
+      <p>Channels</p>
+      <p>Engagement</p>
+      <p>Scale</p>
+      <p>Watch the demo</p>
+    </div>
         <div class="footer__left">
           <ul>
               <li><a href="#">Status</a></li>
@@ -213,9 +287,9 @@
           </ul>
         </div>
     </div>
-  </div>
 </footer>
   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="./vdist/js/script.js"></script>
 </body>
 </html>
